@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import FlashcardList from './FlashcardList';
 
 
 function App() {
   const [flashcards, setFlashcards] = useState(sample_flashcards)
+  
   return (
-    <h1> Hello, let us study for your civics exam!</h1>
+
+    <FlashcardList flashcards={flashcards} />
+    
   );
 }
 
