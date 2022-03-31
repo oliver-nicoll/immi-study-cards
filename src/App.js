@@ -3,12 +3,13 @@ import FlashcardList from './FlashcardList';
 
 
 function App() {
+
   const [flashcards, setFlashcards] = useState(sample_flashcards)
   
   return (
 
     <FlashcardList flashcards={flashcards} />
-    
+
   );
 }
 
