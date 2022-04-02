@@ -14,12 +14,23 @@ body {
     height: 150px;
     width: 150px;
     transition: 150ms; /* visual seeing the flip of the cards */
-    transform: perspective(1000px) rotateY(var(--rotate-y, 0)); /* flipping card truely 180 deg from front to back - perspective gives more of a 3d look */
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) /* flipping card truely 180 deg from front to back - perspective gives more of a 3d look */
+    translateY(var(--translate-y, 0));
+}
+
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba( 0, 0, 0, .5);
 }
 
 .card.flip {
     --rotate-y: 180deg; /* flipping card truely 180 deg from front to back */
 
+}
+
+.card .front {
+    left: 0;
 }
 
 .card .front, 
@@ -31,4 +42,18 @@ body {
 
 .card .back {
     transform: rotateY(180deg); 
+}
+
+.flashcard-options {
+    margin-top: .5rem;
+}
+
+.flashcard-option {
+    margin-top: .25rem;
+    color: #555;
+    font-size: .85rem;
+}
+
+.flashcard-option:first-child {
+    margin-top: 0;
 }
